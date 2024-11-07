@@ -21,11 +21,13 @@
     },
     methods: {
       findAsymptote() {
-        if (this.mValue === this.nValue) {
-          this.asymptoteResult = "The asymptote is horizontal.";
-        } else if (this.mValue < this.nValue) {
+        if (this.mValue === this.nValue) {  //chesk if m and n are equal for horizontal asymptote
+          this.asymptoteResult = "The asymptote is horizontal."
+        }
+        else if (this.mValue < this.nValue) { //checks if m and n are similar for a vertical asymptote
           this.asymptoteResult = "The asymptote is the x-axis.";
-        } else {
+        }
+        else {
           const difference = this.mValue - this.nValue;
           const names = ["Linear", "Quadratic", "Cubic", "Quartic", "Quintic"];
           this.asymptoteResult = `The asymptote is ${names[difference - 1]}`;
