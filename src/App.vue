@@ -12,7 +12,6 @@ import GregoryLeibnizPi from './components/GregoryLeibnizPi.vue';
 <template>
   <div class="container">
     <h1>Assignment 4 - Vue Components</h1>
-    <p> If you see this message the app is loading</p>
     <CosineLaw />
     <AsymptoteFinder />
     <GregoryLeibnizPi />
@@ -32,6 +31,8 @@ body {
     justify-content: center;
     min-height: 100vh;
 }
+
+/* Mian container style */
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -42,6 +43,23 @@ body {
     background-color: #d4e4f4;
     border-radius: 20px;
 }
+
+h1 {
+    grid-column: span 2;
+    text-align: center;
+    margin: 0 0 20px;
+    color: #000000;
+    font-size: 2em;
+    font-weight:bold;
+}
+
+h2 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+/* Styling for each component's box */
 .box {
     padding: 20px;
     background: rgb(250, 243, 250);
@@ -51,16 +69,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
-h1 {
-    grid-column: span 2;
-    text-align: center;
-    margin: 0 0 20px;
-    color: #000000;
-}
-h2 {
-    color: #000000;
-    margin-bottom: 15px;
-}
+
 input[type="number"] {
     width: 80%;
     padding: 8px;
@@ -68,6 +77,12 @@ input[type="number"] {
     border: 1px solid #dfb8ee;
     border-radius: 5px;
     font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color:#bf90ca;
+    outline: none;
 }
 button {
     padding: 8px 17px;
@@ -78,6 +93,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
+    transition:background-color 0.3s ease;
 }
 button:hover {
     background-color: #c454b1;

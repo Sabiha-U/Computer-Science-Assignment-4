@@ -14,20 +14,20 @@ function findAsymptote () {
   } else {
     const difference = mValue.value - nValue.value;
     const names = ["Linear", "Quadratic", "Cubic", "Quartic", "Quintic"];
-    asymptoteResult.value = 'The asymptote is ${names[difference - 1]}';
+    asymptoteResult.value = "The asymptote is" + names[difference - 1];
   }
 }
 </script>
 
 <template>
-    <form @submit.prevent="findAsymptote()">
+    <form @submit.prevent="findAsymptote">
       <h2>Asymptote Finder</h2>
       <label>m Value:</label>
       <input type="number" v-model="mValue" />
       <label>n Value:</label>
       <input type="number" v-model="nValue" />
       <label>Asymptote Result:</label>
-      <input type="number" :value="asymptoteResult" readonly />
+      <input type="text" :value="asymptoteResult" readonly />
       <button type="submit">Find Asymptote</button>
     </form>
   </template>
