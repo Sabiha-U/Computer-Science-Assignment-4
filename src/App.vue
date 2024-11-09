@@ -1,9 +1,5 @@
 <script setup>
-import {ref} from 'vue';
-console.log ('CosineLaw component loaded');
-console.log ('AsymptoteFinder component loaded');
-console.log ('GregoryLeibnizPi component loaded');
-
+import { ref } from 'vue';
 import CosineLaw from './components/CosineLaw.vue';
 import AsymptoteFinder from './components/AsymptoteFinder.vue';
 import GregoryLeibnizPi from './components/GregoryLeibnizPi.vue';
@@ -12,14 +8,24 @@ import GregoryLeibnizPi from './components/GregoryLeibnizPi.vue';
 <template>
   <div class="container">
     <h1>Assignment 4 - Vue Components</h1>
-    <CosineLaw />
-    <AsymptoteFinder />
-    <GregoryLeibnizPi />
+    
+    <div class="box">
+      <CosineLaw />
+    </div>
+    
+    <div class="box">
+      <AsymptoteFinder />
+    </div>
+    
+    <div class="box">
+      <GregoryLeibnizPi />
+    </div>
+    
   </div>
 </template>
 
 <style>
-/* Main place where the styling for the layot and background*/
+/* Main styling for layout and background */
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #000000;
@@ -32,37 +38,31 @@ body {
     min-height: 100vh;
 }
 
-/* Mian container style */
+/* Container layout */
 .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
     gap: 20px;
-    width: 60%;
+    width: 80%;
     max-width: 900px;
     padding: 20px;
-    background-color: #d4e4f4;
     border-radius: 20px;
 }
 
+/* Main title */
 h1 {
     grid-column: span 2;
     text-align: center;
     margin: 0 0 20px;
     color: #000000;
     font-size: 2em;
-    font-weight:bold;
+    font-weight: bold;
 }
 
-h2 {
-    color: #000000;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
-
-/* Styling for each component's box */
+/* Box style for individual sections */
 .box {
     padding: 20px;
-    background: rgb(250, 243, 250);
+    background-color: #f7ecfb;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -70,22 +70,35 @@ h2 {
     align-items: center;
 }
 
-input[type="number"] {
-    width: 80%;
-    padding: 8px;
+/* Subtitle for each box */
+h2 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Style for text and number inputs */
+input[type="number"], input[type="text"] {
+    width: 91%;
+    padding: 10px;
     margin: 5px 0;
     border: 1px solid #dfb8ee;
     border-radius: 5px;
     font-size: 14px;
+    color: #000000;
     transition: border-color 0.3s ease;
 }
 
-input[type="number"]:focus {
-    border-color:#bf90ca;
+/* Focus style for number inputs */
+input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #bf90ca;
     outline: none;
 }
+
+/* Button styling */
 button {
-    padding: 8px 17px;
+    padding: 10px 20px;
     background-color: #bf90ca;
     color: white;
     border: none;
@@ -93,13 +106,16 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
-    transition:background-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
+
 button:hover {
     background-color: #c454b1;
 }
+
+/* Styling for result or message paragraphs */
 p {
     margin-top: 10px;
     color: #c454b1;
 }
-</style>
+</style>  

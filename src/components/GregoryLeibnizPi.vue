@@ -26,13 +26,7 @@ function calculatePi () {
   </template>
   
   <style scoped>
-  /* Styling for the piApproximation component */
-  .box {
-    padding: 10px;
-    background: #f0f0f0;
-    border-radius: 5px;
-    text-align: center;
-  }
+
   </style>
   
   

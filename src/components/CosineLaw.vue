@@ -4,7 +4,7 @@ import {ref} from 'vue';
 const sideA = ref(0);
 const sideB = ref(0);
 const angleC = ref(0);
-const cosineResult = ref("");
+const cosineResult = ref(0);
 
 //the function to calculate side C using the cosine law formula
 function calculateCosineLaw() {
@@ -23,18 +23,12 @@ function calculateCosineLaw() {
       <label>Angle C:</label>
       <input type="number" v-model="angleC" />
       <label> Side C (Result): </label>
-      <p> Side C: {{ cosineResult.toFixed(2) }}</p> <!---displays cosine result--->
+      <input type="number" :value="cosineResult.toFixed(2)" readonly /> 
       <button type="submit">Calculate Side C</button>
     </form>
   </template>
 
   <style scoped>
-  /* Styling for the Cosine Law component */
-  .box {
-    padding: 10px;
-    background: #f0f0f0;
-    border-radius: 5px;
-    text-align: center;
-  }
+ 
   </style>
   

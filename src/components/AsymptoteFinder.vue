@@ -13,8 +13,8 @@ function findAsymptote () {
     asymptoteResult.value = "The asymptote is the x-axis.";
   } else {
     const difference = mValue.value - nValue.value;
-    const names = ["Linear", "Quadratic", "Cubic", "Quartic", "Quintic"];
-    asymptoteResult.value = "The asymptote is" + names[difference - 1];
+    const names = ["Linear", "Quadratic", "Cubic", "Quartc", "Quintic", "Sextic", "Septic", "Octic", "Nonic", "Decic"];
+    asymptoteResult.value = "The asymptote is " + names[difference - 1];
   }
 }
 </script>
@@ -33,12 +33,6 @@ function findAsymptote () {
   </template>
   
   <style scoped>
-  /* Styling for the Asymptote component */
-  .box {
-    padding: 10px;
-    background: #f0f0f0;
-    border-radius: 5px;
-    text-align: center;
-  }
+
   </style>
   
