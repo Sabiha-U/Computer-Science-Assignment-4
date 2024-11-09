@@ -1,43 +1,39 @@
+<script setup>
+import {ref} from 'vue';
+
+const mValue = ref(0);
+const nValue = ref(0);
+const asymptoteResult = ref("");
+
+//this function determines the aysmptote type based on m and n values
+function findAsymptote () {
+  if (mValue.value === nValue.value) {  //chesk if m and n are equal for horizontal asymptote
+    asymptoteResult.value = "The asymptote is horizontal."
+  } else if (mValue.value < nValue.value) { //checks if m and n are similar for a vertical asymptote
+    asymptoteResult.value = "The asymptote is the x-axis.";
+  } else {
+    const difference = mValue.value - nValue.value;
+    const names = ["Linear", "Quadratic", "Cubic", "Quartic", "Quintic"];
+    asymptoteResult.value = 'The asymptote is ${names[difference - 1]}';
+  }
+}
+</script>
+
 <template>
-    <div class="box">
+    <form @submit.prevent="findAsymptote()">
       <h2>Asymptote Finder</h2>
       <label>m Value:</label>
       <input type="number" v-model="mValue" />
       <label>n Value:</label>
       <input type="number" v-model="nValue" />
-      <button @click="findAsymptote">Find Asymptote</button>
-      <p>{{ asymptoteResult }}</p>
-    </div>
+      <label>Asymptote Result:</label>
+      <input type="number" :value="asymptoteResult" readonly />
+      <button type="submit">Find Asymptote</button>
+    </form>
   </template>
   
-  <script>
-  export default {
-    data() {
-      return {
-        mValue: 0,
-        nValue: 0,
-        asymptoteResult: "",
-      };
-    },
-    methods: {
-      findAsymptote() {
-        if (this.mValue === this.nValue) {  //chesk if m and n are equal for horizontal asymptote
-          this.asymptoteResult = "The asymptote is horizontal."
-        }
-        else if (this.mValue < this.nValue) { //checks if m and n are similar for a vertical asymptote
-          this.asymptoteResult = "The asymptote is the x-axis.";
-        }
-        else {
-          const difference = this.mValue - this.nValue;
-          const names = ["Linear", "Quadratic", "Cubic", "Quartic", "Quintic"];
-          this.asymptoteResult = `The asymptote is ${names[difference - 1]}`;
-        }
-      },
-    },
-  };
-  </script>
-  
   <style scoped>
+  /* Styling for the Asymptote component */
   .box {
     padding: 10px;
     background: #f0f0f0;

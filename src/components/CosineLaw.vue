@@ -1,5 +1,20 @@
+<script setup>
+import {ref} from 'vue';
+
+const sideA = ref(0);
+const sideB = ref(0);
+const angleC = ref(0);
+const cosineResult = ref("");
+
+//the function to calculate side C using the cosine law formula
+function calculateCosineLaw() {
+const angleInRadians = (angleC.value * Math.Pi) / 180;
+const c = Math.sqrt (sideA**2 + sideB**2 - 2 * sideA.value * sideB.value * Math.cos(angleInRadians));
+}
+</script>
+
 <template>
-    <div class="box">
+    <form @submit.prevent="calculateCosineLaw()">
       <h2>Cosine Law</h2>
       <label>Side A:</label>
       <input type="number" v-model="sideA" />
@@ -8,33 +23,12 @@
       <label>Angle C:</label>
       <input type="number" v-model="angleC" />
       <button @click="calculateCosineLaw">Calculate Side C</button>
-      <p>{{ cosineResult }}</p>
-    </div>
+      Side C: {{ cosineResult.value.toFixed(2)}}
+    </form>
   </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        sideA: 0,
-        sideB: 0,
-        angleC: 0,
-        cosineResult: "",
-      };
-    },
-    methods: {
-      calculateCosineLaw() {
-        const angleInRadians = (this.angleC * Math.PI) / 180;
-        const c = Math.sqrt(
-          this.sideA ** 2 + this.sideB ** 2 - 2 * this.sideA * this.sideB * Math.cos(angleInRadians)
-        );
-        this.cosineResult = `Side C: ${c.toFixed(2)}`;
-      },
-    },
-  };
-  </script>
-  
+
   <style scoped>
+  /* Styling for the Cosine Law component */
   .box {
     padding: 10px;
     background: #f0f0f0;

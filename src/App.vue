@@ -1,27 +1,26 @@
+<script setup>
+import {ref} from 'vue';
+console.log ('CosineLaw component loaded');
+console.log ('AsymptoteFinder component loaded');
+console.log ('GregoryLeibnizPi component loaded');
+
+import CosineLaw from './components/CosineLaw.vue';
+import AsymptoteFinder from './components/AsymptoteFinder.vue';
+import GregoryLeibnizPi from './components/GregoryLeibnizPi.vue';
+</script>
+
 <template>
   <div class="container">
     <h1>Assignment 4 - Vue Components</h1>
+    <p> If you see this message the app is loading</p>
     <CosineLaw />
     <AsymptoteFinder />
     <GregoryLeibnizPi />
   </div>
 </template>
 
-<script>
-import CosineLaw from './components/CosineLaw.vue';
-import AsymptoteFinder from './components/AsymptoteFinder.vue';
-import GregoryLeibnizPi from './components/GregoryLeibnizPi.vue';
-
-export default {
-  components: {
-    CosineLaw,
-    AsymptoteFinder,
-    GregoryLeibnizPi,
-  },
-};
-</script>
-
 <style>
+/* Main place where the styling for the layot and background*/
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #000000;
