@@ -33,6 +33,53 @@ function findAsymptote () {
   </template>
   
   <style scoped>
+/* Button styling */
+button {
+    padding: 10px 20px;
+    background-color: #bf90ca;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
 
+button:hover {
+    background-color: #c454b1;
+}
+
+/* Styling for result or message paragraphs */
+p {
+    margin-top: 10px;
+    color: #c454b1;
+}
+
+/* Style for text and number inputs */
+input[type="number"], input[type="text"] {
+    width: 91%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #dfb8ee;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #000000;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus style for number inputs */
+input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #bf90ca;
+    outline: none;
+}
+
+/* Subtitle for each box */
+h2 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    text-align: center;
+}
   </style>
   
